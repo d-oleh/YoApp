@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#121212"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <!-- Штамп "Цілком таємно" у верхньому кутку -->
+    <TextView
+        android:id="@+id/tvStamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#338B0000"
+        android:fontFamily="monospace"
+        android:padding="6dp"
+        android:rotation="-8"
+        android:text="CLASSIFIED // CASE #404"
+        android:textColor="#CC3333"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Головний заголовок у стилі друкарської машинки -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="monospace"
+        android:letterSpacing="0.1"
+        android:text="DAILY DEFUSING"
+        android:textAlignment="center"
+        android:textColor="#E0D8C8"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvStamp" />
+
+    <!-- Підзаголовок (атмосферний опис) -->
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="serif"
+        android:text="Тіні шепочуть. Годинник цокає."
+        android:textColor="#7A756C"
+        android:textSize="14sp"
+        android:textStyle="italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <!-- Декоративний "Таймер бомби" -->
+    <TextView
+        android:id="@+id/tvTimerDecor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:background="#080808"
+        android:fontFamily="monospace"
+        android:paddingHorizontal="28dp"
+        android:paddingVertical="12dp"
+        android:text="04 : 59 : 99"
+        android:textColor="#B71C1C"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle" />
+
+    <!-- Поле для вводу коду/імені детектива -->
+    <EditText
+        android:id="@+id/etAgentCode"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:backgroundTint="#5A534A"
+        android:fontFamily="monospace"
+        android:hint="Введіть позивний детектива..."
+        android:inputType="textPersonName"
+        android:minHeight="48dp"
+        android:textColor="#E0D8C8"
+        android:textColorHint="#5A534A"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimerDecor" />
+
+    <!-- Кнопка початку гри (Почати знешкодження) -->
+    <Button
+        android:id="@+id/btnDefuse"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#8B1E1E"
+        android:fontFamily="monospace"
+        android:text="РОЗПОЧАТИ ОПЕРАЦІЮ"
+        android:textColor="#E0D8C8"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAgentCode" />
+
+    <!-- Кнопка для другого гравця (Архів / Інструкції) -->
+    <Button
+        android:id="@+id/btnManual"
+        android:layout_width="0dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="12dp"
+        android:backgroundTint="#24221F"
+        android:fontFamily="monospace"
+        android:text="АРХІВ СХЕМ (ДЛЯ ЕКСПЕРТА)"
+        android:textColor="#B8AFA3"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDefuse" />
+
+    <!-- Перемикач для додаткової складності -->
+    <Switch
+        android:id="@+id/swHardcore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="monospace"
+        android:minHeight="48dp"
+        android:text="Протокол: Без права на помилку  "
+        android:textColor="#8A8275"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnManual"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <!-- Нижній колонтитул -->
+    <TextView
+        android:id="@+id/tvFooter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="monospace"
+        android:text="ВІДДІЛ ОСОБЛИВИХ РОЗСЛІДУВАНЬ • 1947"
+        android:textColor="#47433E"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
